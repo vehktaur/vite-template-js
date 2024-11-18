@@ -13,5 +13,11 @@ export default {
       },
     },
   },
-  plugins: [fluid],
+  plugins: [
+    fluid,
+    require('tailwind-scrollbar')({
+      nocompatible: true,
+      preferredStrategy: 'pseudoelements'
+    })
+  ]
 };
