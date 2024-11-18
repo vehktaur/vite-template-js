@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+#root,
+html,
+body {
+  height: 100%;
+}
+
+@layer utilities {
+  .padding-inline {
+    @apply px-5 sm:~px-8/12;
+  }
+}
