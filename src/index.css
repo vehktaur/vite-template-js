@@ -9,6 +9,40 @@ body {
   min-height: 100%;
 }
 
+@layer base {
+  /*Remove blue autofill colour  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+  }
+
+  /* Customize input:date picker icon */
+  input[type='date']::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    background: url('./assets/calendar_icon.svg') no-repeat;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-width: thin;
+    z-index: 1;
+  }
+
+  /* Remove input buttons for number type */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  /* ...for Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
 @layer utilities {
   .padding-inline {
     @apply px-5 sm:~px-8/12;
